@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Components/Home';
+import Header from './Components/Header';
+import Contact from './Components/Contact';
+import Radar from './Components/Radar';
+import Footer from './Components/Footer';
+import styled from 'styled-components';
 
-function App() {
+const AppFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh + 5rem);
+`;
+
+const AppContent = styled.div`
+  flex: 1;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppFlex>
+      <BrowserRouter>
+        <Header />
+        <AppContent>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="contato" element={<Contact />} />
+            <Route path="radar" element={<Radar />} />
+          </Routes>
+        </AppContent>
+        <Footer />
+      </BrowserRouter>
+    </AppFlex>
   );
-}
+};
 
 export default App;
