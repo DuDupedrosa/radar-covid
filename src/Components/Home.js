@@ -34,7 +34,7 @@ const Home = () => {
   }, []);
 
   return (
-    <section>
+    <section aria-label="Home">
       <Head
         title="home"
         description="fique por dentro de todas as informações sobre o covid-19"

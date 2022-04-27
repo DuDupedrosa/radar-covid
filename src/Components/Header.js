@@ -143,10 +143,10 @@ const Header = () => {
             )}
             {mobile ? (
               <HeaderNavMobileLinks state={menuActive}>
-                <Link to="radar" onClick={handleClick}>
+                <Link to="/radar" onClick={handleClick}>
                   Radar
                 </Link>
-                <Link to="contato" onClick={handleClick}>
+                <Link to="/contato" onClick={handleClick}>
                   Contato
                 </Link>
               </HeaderNavMobileLinks>
